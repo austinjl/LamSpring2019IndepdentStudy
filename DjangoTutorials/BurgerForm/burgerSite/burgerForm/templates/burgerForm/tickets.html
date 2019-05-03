@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Burger Tickets</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Burger Tickets</a></h1>
+        </div>
+
+            {% for order in form %}
+                <div>
+                    <!--
+                    <p>published: {{ post.date }}</p>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                    -->
+
+                    <h3>order number: {{ order.order_number }}</h3>
+                    <h4>customer name: {{ order.customer_name }}</h4>
+                    <h4>protein: {{ order.protein }}</h4>
+                    <h4>number of patties: {{ order.num_patties }}</h4>
+                    <h4>cook option: {{ order.cook }}</h4>
+                    <h4>toppings</h4>
+
+                    {% if order.lettice %}
+                        <h5>lettice</h5>
+                    {% endif %}
+
+                    {% if order.tomato %}
+                        <h5>tomato</h5>
+                    {% endif %}
+
+                    {% if order.onion %}
+                        <h5>onion</h5>
+                    {% endif %}
+
+                    {% if order.cheese %}
+                        <h5>cheese</h5>
+                    {% endif %}
+
+                    <h4>bun: {{ order.bun }}</h4>
+                    <h4>sauce: {{ order.sauce }}</h4>
+                    <h4>comments: {{ order.comments }}</h4>
+                    <h4>order placed on {{ order.date }}</h4>
+
+                </div>
+            {% endfor %}
+
+    </body>
+</html>
